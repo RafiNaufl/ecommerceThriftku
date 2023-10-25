@@ -18,7 +18,7 @@ module.exports = {
       size: {
         type: Sequelize.STRING
       },
-      rinpce: {
+      price: {
         type: Sequelize.INTEGER
       },
       photo: {
