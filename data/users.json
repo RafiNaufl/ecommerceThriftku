@@ -1,0 +1,32 @@
+[
+    {
+        "username": "naufalrafi",
+        "email": "naufalrafi27@gmail.com",
+        "password": "rafi12345",
+        "role": "seller"
+    },
+    {
+        "username": "nikenbayu",
+        "email": "nikenbayu12@gmail.com",
+        "password": "niken12345",
+        "role": "buyer"
+    },
+    {
+        "username": "jeremikz",
+        "email": "jeremikz@gmail.com",
+        "password": "jeremikz123",
+        "role": "seller"
+    },
+    {
+        "username": "sitirahma",
+        "email": "sitirahma321@gmail.com",
+        "password": "sitirahma123",
+        "role": "buyer"
+    },
+    {
+        "username": "rizalwibowo",
+        "email": "rizal123@gmail.com",
+        "password": "rizal123",
+        "role": "seller"
+    }
+]

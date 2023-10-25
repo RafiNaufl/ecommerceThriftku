@@ -1,0 +1,22 @@
+[
+    {
+        "id" : 1,
+        "name": "Kaos"
+    },
+    {
+        "id" : 2,
+        "name": "Kemeja"
+    },
+    {
+        "id" : 3,
+        "name": "Jaket"
+    },
+    {
+        "id" : 4,
+        "name": "Jeans"
+    },
+    {
+        "id" : 5,
+        "name": "Sweater"
+    } 
+]
