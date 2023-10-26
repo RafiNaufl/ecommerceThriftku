@@ -15,14 +15,27 @@ class Controller {
 
     // READ Home
     static async home(req, res) {
+        const { search } = req.query;
+    
+        let whereClause = {};
+    
+        if (search) {
+            whereClause = {
+                name: {
+                    [Op.iLike]: `%${search}%` 
+                }
+            };
+        }
+
         try {
+
             const categories = await Category.findAll({
                 include: Product
             });
             
             res.render('home', { categories });
         } catch (err) {
-            res.send(err);
+            res.send(err.message);
         }
     }
     // READ Product
@@ -92,6 +105,58 @@ class Controller {
             res.send(error.message)
         }
     }
+
+    // GET Edit Form Product
+    static async getEditProduct(req, res) {
+        try {
+            const productId = req.params.id;
+            const product = await Product.findByPk(productId);
+            const categories = await Category.findAll();
+            
+            res.render('editProduct', { product, data: categories });
+
+        } catch (err) {
+            res.send(err.message);
+        }
+    }
+
+    // POST Edit Form Product
+    static async postEditProduct(req, res) {
+        try {
+            const { title, stock, size, price, photo, description, CategoryId } = req.body;
+            const productId = req.params.id;
+
+            // Update produk
+            await Product.update({
+                title,
+                stock,
+                size,
+                price,
+                photo,
+                description,
+                CategoryId
+            }, {
+                where: { id: productId }
+            });
+
+            res.redirect('/products');
+        } catch (err) {
+            console.log(err);
+            res.send(err);
+        }
+    }
+
+    static async getDeleteProduct(req, res) {
+        try {
+            const productId = req.params.id;
+            const product = await Product.findByPk(productId);
+            await product.destroy();
+            res.redirect('/products');
+        } catch (err) {
+            res.send(err);
+        }
+    }    
+
     static async buy(req, res) {
         try {
             console.log(req.params);
@@ -131,71 +196,72 @@ class Controller {
 
     static async Profile(req, res) {
         try {
-
-            let user = await User.findOne({
+            const user = await User.findOne({
                 where: {
-                    id : req.session.userId
-                }
-            })
-
-            let data = await Profile.findOne({
-                where: {
-                    name: user.username
-                }
-            })
-            // console.log(data);
-            res.render('profile', { data })
+                    id: req.session.userId
+                },
+                include: Profile
+            });
+    
+            res.render('profile', { user });
         } catch (error) {
             console.log(error);
-            res.send(error.message)
+            res.send(error.message);
         }
     }
-
+    
     static async edit(req, res) {
         try {
-            
-            let user = await User.findOne({
+            const user = await User.findOne({
                 where: {
-                    id : req.session.userId
-                }
-            })
-
-            let data = await Profile.findOne({
-                where: {
-                    name: user.username
-                }
-            })
-            // console.log(data);
-            res.render('editProfile', { data })
-
+                    id: req.session.userId
+                },
+                include: Profile
+            });
+    
+            res.render('editProfile', { user });
         } catch (error) {
             console.log(error);
-            res.send(error.message)
+            res.send(error.message);
         }
     }
-
+    
     static async insertEdit(req, res) {
         try {
-            console.log(req.body);
-            const {name, dateOfBirth, photoProfile, phoneNumber} = req.body
-            await Profile.update({
-                name, 
-                dateOfBirth,
-                photoProfile,
-                phoneNumber
-            },
-            {
-                where: {
-                    name: name
+            const { name, dateOfBirth, photoProfile, phoneNumber } = req.body;
+    
+            await Profile.update(
+                {
+                    name,
+                    dateOfBirth,
+                    photoProfile,
+                    phoneNumber
+                },
+                {
+                    where: {
+                        UserId: req.session.userId
+                    }
                 }
-            }
-            )
-            res.redirect('/')
+            );
+    
+            res.redirect('/profile');
         } catch (error) {
             console.log(error);
-            res.send(error.message)
+            res.send(error.message);
         }
     }
+    static async deleteUser(req, res) {
+        try {
+            const userId = req.params.id;
+            const user = await User.findByPk(userId);
+            
+            await user.destroy();
+            res.redirect('/logout');
+        } catch (err) {
+            res.send(err.message);
+        }
+    }    
+    
 }
 
 module.exports = Controller;
