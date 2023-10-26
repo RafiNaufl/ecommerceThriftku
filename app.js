@@ -71,9 +71,16 @@ app.get('/products', Controller.listProducts)
 app.get('/products/add', Controller.getAddProduct)
 app.post('/products/add', Controller.postAddProduct)
 
-app.get('/a', (req, res) => {
-    res.send('kok bisa masuk')
-})
+app.get('/categories/:id/products', Controller.categoryProduct)
+
+app.get('/profile', Controller.Profile)
+
+app.get('/edit/profile', Controller.edit)
+app.post('/edit/profile', Controller.insertEdit)
+
+app.get('/buy/:id', Controller.buy)
+
+app.get('/cart', Controller.cart)
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
