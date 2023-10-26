@@ -71,6 +71,9 @@ app.get('/products', Controller.listProducts)
 app.get('/products/add', Controller.getAddProduct)
 app.post('/products/add', Controller.postAddProduct)
 app.get('/products/:id', Controller.listProductsDetail)
+app.get('/products/edit/:id', Controller.getEditProduct)
+app.post('/products/edit/:id', Controller.postEditProduct)
+app.get('/products/delete/:id', Controller.getDeleteProduct)
 
 app.get('/categories/:id/products', Controller.categoryProduct)
 
@@ -82,6 +85,8 @@ app.post('/edit/profile', Controller.insertEdit)
 app.get('/buy/:id', Controller.buy)
 
 app.get('/cart', Controller.cart)
+
+app.get('/delete/profile/:id', Controller.deleteUser)
 
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
