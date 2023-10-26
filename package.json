@@ -1,4 +1,14 @@
 {
+  "name": "ecommercethriftku",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "ejs": "^3.1.9",
@@ -7,17 +17,8 @@
     "pg": "^8.11.3",
     "sequelize": "^6.33.0"
   },
-  "name": "pair-project-0.2",
-  "version": "1.0.0",
-  "main": "index.js",
   "devDependencies": {
+    "nodemon": "^3.0.1",
     "sequelize-cli": "^6.6.1"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": ""
+  }
 }

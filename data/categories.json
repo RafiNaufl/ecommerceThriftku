@@ -1,22 +1,27 @@
 [
     {
         "id" : 1,
-        "name": "Kaos"
+        "name": "Kaos",
+        "photo": "kaos.jpg"
     },
     {
         "id" : 2,
-        "name": "Kemeja"
+        "name": "Kemeja",
+        "photo": "kemeja.jpg"
     },
     {
         "id" : 3,
-        "name": "Jaket"
+        "name": "Jaket",
+        "photo": "jaket.jpg"
     },
     {
         "id" : 4,
-        "name": "Jeans"
+        "name": "Jeans",
+        "photo": "jeans.jpg"
     },
     {
         "id" : 5,
-        "name": "Sweater"
+        "name": "Sweater",
+        "photo": "sweater.jpg"
     } 
 ]

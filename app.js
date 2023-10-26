@@ -6,7 +6,9 @@ const session = require('express-session')
 const port = 3000
 
 app.set('view engine', 'ejs')
-app.use(express.urlencoded({ extended: true }))
+
+app.use(express.urlencoded ({extended: true}))
+app.use(express.static('public'))
 
 app.use(session({
     secret: 'keyboard cat',
@@ -27,7 +29,6 @@ let islogged = function(req, res, next) {
         next()        
     }
 }
-
 
 //! get register
 
@@ -66,6 +67,9 @@ app.get('/logout', userController.logout)
 
 //! get home
 app.get('/', Controller.home)
+app.get('/products', Controller.listProducts)
+app.get('/products/add', Controller.getAddProduct)
+app.post('/products/add', Controller.postAddProduct)
 
 app.get('/a', (req, res) => {
     res.send('kok bisa masuk')
