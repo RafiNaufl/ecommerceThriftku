@@ -4,23 +4,71 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sign In</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        .cascading-right {
+          margin-right: -50px;
+        }
+    
+        @media (max-width: 991.98px) {
+          .cascading-right {
+            margin-right: 0;
+          }
+        }
+      </style>
 </head>
 <body>
-    <% if(err) { %>
-        <p style="color: red;"><%= err %></p>
-    <% } %>
-    <form action="/login" method="post">
-        <div>
-            <label for="username">Username</label>
-            <input type="text" name="username" id="username" autocomplete="off" >
+    <!-- Jumbotron -->
+    <div class="container py-4 mt-5" style="margin-left: 300px;">
+        <div class="row g-0 align-items-center">
+            <div class="col-lg-4 mb-5 mb-lg-0">
+                <div class="card cascading-right rounded-4" style="background: hsla(0, 0%, 100%, 0.55); backdrop-filter: blur(30px);">
+                    <div class="card-body p-5 shadow text-center">
+                        <h2 class="fw-bold mb-3">Sign in now!</h2>
+
+                        <% if(err) { %>
+                            <div class="alert alert-danger" role="alert">
+                                <%= err %>
+                            </div>
+                        <% } %>
+                        
+                        <form action="/login" method="post" style="width: 250px; margin-left: 70px;">
+                            <div class="mb-4">
+                                <div class="form-group">
+                                    <input type="text" id="username" name="username" class="form-control" placeholder="Username" autocomplete="off" required/>
+                                </div>
+                            </div>
+
+                            <div class="mb-2">
+                                <div class="form-group">
+                                    <input type="password" id="password" class="form-control" name="password" placeholder="Password" autocomplete="off" required />
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <button type="submit" class="btn btn-primary btn-block">
+                                    Sign in
+                                </button>
+                                <a href="/register"><button type="button" class="btn btn-danger">
+                                    Sign Up
+                                </button></a>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <img src="https://images.pexels.com/photos/5076516/pexels-photo-5076516.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="rounded-4 shadow" alt="" style="height: 700px; width: 200;"/>
+            </div>
         </div>
-        <div>
-            <label for="password">Password</label>
-            <input type="password" name="password" id="password" autocomplete="off" >
-        </div>
-        <button type="submit">Submit</button>
-    </form>
-    <a href="/register">Create Account</a>
+    </div>
+    <!-- Jumbotron -->
+
+    <!-- Bootstrap JS (optional) -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.2.0/js/bootstrap.min.js"></script>
 </body>
 </html>

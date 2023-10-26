@@ -4,31 +4,78 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sign Up</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style>
+        .cascading-right {
+          margin-right: -50px;
+        }
+    
+        @media (max-width: 991.98px) {
+          .cascading-right {
+            margin-right: 0;
+          }
+        }
+      </style>
 </head>
 <body>
-    <h1>Register</h1>
-        <form action="/register" method="post">
-            <div>
-                <label for="username">Username</label>
-                <input type="text" name="username" id="username" placeholder="ex: PairProject" autocomplete="off" required>
+    <!-- Jumbotron -->
+    <div class="container py-4 mt-5" style="margin-left: 300px;">
+        <div class="row g-0 align-items-center">
+            <div class="col-lg-4 mb-5 mb-lg-0">
+                <div class="card cascading-right rounded-4" style="background: hsla(0, 0%, 100%, 0.55); backdrop-filter: blur(30px);">
+                    <div class="card-body p-5 shadow text-center">
+                        <h2 class="fw-bold mb-5">Sign up now</h2>
+                        <form action="/register" method="post">
+                            <div class="mb-4">
+                                <div class="form-group">
+                                    <input type="text" id="username" name="username" class="form-control" placeholder="Username" autocomplete="off" required/>
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <div class="form-group">
+                                    <input type="email" id="email" name="email" class="form-control" placeholder="Email address" autocomplete="off" required />
+                                </div>
+                            </div>
+
+                            <div class="mb-2">
+                                <div class="form-group">
+                                    <input type="password" id="password" class="form-control" name="password" placeholder="Password" autocomplete="off" required />
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <p>Pilih role :</p>
+                                <select name="role" id="role" class="form-select">
+                                    <option value="seller">Seller</option>
+                                    <option value="buyer">Buyer</option>
+                                </select>
+                            </div>
+
+                            <div class="mb-4">
+                                <button type="submit" class="btn btn-primary btn-block">
+                                    Sign up
+                                </button>
+                                <a href="/login"><button type="button" class="btn btn-success">
+                                    Sign In
+                                </button></a>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
             </div>
-            <div>
-                <label for="email">Email</label>
-                <input type="email" name="email" id="email" placeholder="ex: user1@mail.com" autocomplete="off" required>
+
+            <div class="col-lg-6">
+                <img src="https://images.pexels.com/photos/5076516/pexels-photo-5076516.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" class="rounded-4 shadow" alt="" style="height: 700px; width: 200;"/>
             </div>
-            <div>
-                <label for="password">Password</label>
-                <input type="password" name="password" id="password" placeholder="ex: password123" autocomplete="off" required>
-            </div>
-            <div>
-                <label for="role">Role</label>
-                <select name="role" id="role">
-                    <option value="seller">Seller</option>
-                    <option value="buyer">Buyer</option>
-                </select>
-            </div>
-            <button type="submit">Submit</button>
-        </form>
+        </div>
+    </div>
+    <!-- Jumbotron -->
+
+    <!-- Bootstrap JS (optional) -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.2.0/js/bootstrap.min.js"></script>
 </body>
 </html>

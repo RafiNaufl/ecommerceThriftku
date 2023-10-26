@@ -9,6 +9,7 @@ class Controller {
             const categories = await Category.findAll({
                 include: Product
             });
+            
             res.render('home', { categories });
         } catch (err) {
             res.send(err);
@@ -51,6 +52,19 @@ class Controller {
             res.redirect('/products')
         } catch (error) {
             res.send(error)
+        }
+    }
+    // Read product detail 
+    static async listProductsDetail(req, res) {
+        try {
+            const productId = req.params.id;
+            const product = await Product.findAll();
+            const products = await Product.findByPk(productId, {
+                include: Category
+            });
+            res.render('productDetail', { product, products, currencyFormatter });
+        } catch (err) {
+            res.send(err);
         }
     }
     
