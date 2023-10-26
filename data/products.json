@@ -9,8 +9,7 @@
       "description": "Kaos polos berwarna putih dengan ukuran M.",
       "createdAt": "2023-10-25T08:00:00Z",
       "updatedAt": "2023-10-25T08:00:00Z",
-      "CategoryId": 1,
-      "UserId": 1
+      "CategoryId": 1
     },
     {
       "id": 2,
@@ -22,8 +21,7 @@
       "description": "Kemeja lengan panjang dengan ukuran L.",
       "createdAt": "2023-10-25T08:00:00Z",
       "updatedAt": "2023-10-25T08:00:00Z",
-      "CategoryId": 2,
-      "UserId": 2
+      "CategoryId": 2
     },
     {
       "id": 3,
@@ -35,8 +33,7 @@
       "description": "Jaket kulit berwarna hitam dengan ukuran XL.",
       "createdAt": "2023-10-25T08:00:00Z",
       "updatedAt": "2023-10-25T08:00:00Z",
-      "CategoryId": 3,
-      "UserId": 1
+      "CategoryId": 3
     },
     {
       "id": 4,
@@ -48,8 +45,7 @@
       "description": "Jeans slim fit berwarna biru dengan ukuran 32.",
       "createdAt": "2023-10-25T08:00:00Z",
       "updatedAt": "2023-10-25T08:00:00Z",
-      "CategoryId": 4,
-      "UserId": 2
+      "CategoryId": 4
     },
     {
       "id": 5,
@@ -61,8 +57,7 @@
       "description": "Sweater rajut berwarna merah dengan ukuran S.",
       "createdAt": "2023-10-25T08:00:00Z",
       "updatedAt": "2023-10-25T08:00:00Z",
-      "CategoryId": 5,
-      "UserId": 1
+      "CategoryId": 5
     },
     {
         "id": 6,
@@ -74,8 +69,7 @@
         "description": "Kaos dengan strip hitam-putih, ukuran L.",
         "createdAt": "2023-10-25T08:00:00Z",
         "updatedAt": "2023-10-25T08:00:00Z",
-        "CategoryId": 1,
-        "UserId": 2
+        "CategoryId": 1
       },
       {
         "id": 7,
@@ -87,8 +81,7 @@
         "description": "Kemeja denim klasik dengan ukuran M.",
         "createdAt": "2023-10-25T08:00:00Z",
         "updatedAt": "2023-10-25T08:00:00Z",
-        "CategoryId": 2,
-        "UserId": 1
+        "CategoryId": 2
       },
       {
         "id": 8,
@@ -100,8 +93,7 @@
         "description": "Jaket parka berwarna hijau army dengan ukuran XL.",
         "createdAt": "2023-10-25T08:00:00Z",
         "updatedAt": "2023-10-25T08:00:00Z",
-        "CategoryId": 3,
-        "UserId": 2
+        "CategoryId": 3
       },
       {
         "id": 9,
@@ -113,8 +105,7 @@
         "description": "Jeans slim fit berwarna hitam dengan ukuran 34.",
         "createdAt": "2023-10-25T08:00:00Z",
         "updatedAt": "2023-10-25T08:00:00Z",
-        "CategoryId": 4,
-        "UserId": 1
+        "CategoryId": 4
       },
       {
         "id": 10,
@@ -126,8 +117,7 @@
         "description": "Sweater rajut berwarna biru muda dengan ukuran M.",
         "createdAt": "2023-10-25T08:00:00Z",
         "updatedAt": "2023-10-25T08:00:00Z",
-        "CategoryId": 5,
-        "UserId": 2
+        "CategoryId": 5
       }
   ]
   
