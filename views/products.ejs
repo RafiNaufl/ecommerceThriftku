@@ -75,19 +75,16 @@
     <!-- Card --> 
     <div class="container mt-6">
         <div class="row">
-            <% products.forEach((product) => { %>
+            <% products.forEach((el) => { %>
                 <div class="col-md-3 col-12 mb-3">
                     <div class="card custom-card">
-                        <a href="/products/<%= product.id %>" style="text-decoration:none; color: black;">
-                        <img src="<%= product.photo %>" class="card-img-top" alt="<%= product.title %>">
-                        <a href="/detail/<%= product.id %>">
-                            <img src="<%= product.photo %>" class="card-img-top" alt="<%= product.title %>">
-                        </a>
-                        <div class="card-body mb-4">
-                            <h5 class="card-title" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;"><%= product.title %></h5>
-                            <p class="card-text">Size: <%= product.size %></p>
-                            <h6 class="card-text">Harga: <%= currencyFormatter(product.price) %></h6>
-                            <a href="/buy<%= product.id %>"><button type="submit">buy</button></a>
+                        <a href="/products/<%= el.id %>" style="text-decoration:none; color: black;">
+                        <img src="<%= el.photo %>" class="card-img-top" alt="<%= el.title %>">
+                        <div class="card-body mb-2">
+                            <h5 class="card-title" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;"><%= el.title %></h5>
+                            <p class="card-text">Size: <%= el.size %></p>
+                            <h6 class="card-text">Harga: <%= currencyFormatter(el.price) %></h6>
+                            <a href="/buy<%= el.id %>"><button type="submit" class="btn btn-primary mt-4">buy</button></a>
                         </div>
                         </a>
                     </div>
