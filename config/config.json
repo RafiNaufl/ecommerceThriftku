@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "postgres",
-    "password": "postgres",
+    "password": "270900",
     "database": "thriftku_DB",
     "host": "localhost",
     "dialect": "postgres"
