@@ -26,7 +26,7 @@
 <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg">
-        <div class="container">
+        <div class="container mt-3">
             <a class="navbar-brand" href="/">
                 <img src="" alt="Logo" width="200" height="70">
             </a>
@@ -48,9 +48,9 @@
                         </button></a>
                     </li>
                     <li class="nav-item">
-                        <button type="button" class="btn btn-outline-danger">
+                        <a href="/logout"><button type="button" class="btn btn-outline-danger">
                             Log Out
-                        </button>
+                        </button></a>
                     </li>
                 </ul>
             </div>
@@ -72,14 +72,14 @@
         </div>
     </div>
 
-
-
     <!-- Card --> 
     <div class="container mt-6">
         <div class="row">
             <% products.forEach((product) => { %>
                 <div class="col-md-3 col-12 mb-3">
                     <div class="card custom-card">
+                        <a href="/products/<%= product.id %>" style="text-decoration:none; color: black;">
+                        <img src="<%= product.photo %>" class="card-img-top" alt="<%= product.title %>">
                         <a href="/detail/<%= product.id %>">
                             <img src="<%= product.photo %>" class="card-img-top" alt="<%= product.title %>">
                         </a>
@@ -89,6 +89,7 @@
                             <h6 class="card-text">Harga: <%= currencyFormatter(product.price) %></h6>
                             <a href="/buy<%= product.id %>"><button type="submit">buy</button></a>
                         </div>
+                        </a>
                     </div>
                 </div>
             <% }); %>

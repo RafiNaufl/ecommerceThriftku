@@ -26,7 +26,7 @@
 <body>
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg">
-        <div class="container">
+        <div class="container mt-3">
             <a class="navbar-brand" href="/">
                 <img src="" alt="Logo" width="200" height="70">
             </a>
@@ -48,6 +48,9 @@
                         </button></a>
                     </li>
                     <li class="nav-item">
+                        <a href="/logout"><button type="button" class="btn btn-outline-danger">
+                            Log Out
+                        </button></a>
                         <a href="/logout">
                             <button type="button" class="btn btn-outline-danger">
                                 Log Out
@@ -66,22 +69,22 @@
         </div>
     </nav>
 
-    <!-- Jumbotrons -->
-    <div class="container my-4" style="border-radius: 10px;">
-        <hr/>   
-        <div class="p-1 text-center bg-body-tertiary rounded-3"><br>
-          <img class="mt-4 mb-3" src="" alt="">
-          <p class="col-lg-8 mx-auto fs-5 text-muted">
-            Lorem Ipsum Dolmet
-          </p>
-          <div class="d-inline-flex gap-2 mb-5">
-            <a href="/products"><button class="d-inline-flex align-items-center btn btn-warning btn-lg px-4 rounded-pill" type="button">
-              Shop Now
-            </button></a>
-          </div>
-          <hr/>
+    <!-- Section Container -->
+    <section class="container my-4" style="border-radius: 10px;">
+        <div class="p-1 text-center bg-body-tertiary rounded-3">
+            <div class="position-relative">
+                <img src="https://images.pexels.com/photos/5865196/pexels-photo-5865196.jpeg" alt="" class="w-100 rounded-3" style="object-fit: cover; height: 400px; opacity: 0.8">
+                <div class="position-absolute top-50 start-50 translate-middle text-white" style="margin-top: 90px;">
+                    <h5 class="display-4">Welcome To ThriftKu</h5>
+                    <p class="lead">Your destination for stylish fashion.</p>
+                    <a href="/products">
+                        <button class="btn btn-warning btn-lg px-4 rounded-pill">Shop Now</button>
+                    </a>
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
+
 
     <!-- Card Kategori -->
     <div class="container mt-6">

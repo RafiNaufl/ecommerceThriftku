@@ -70,6 +70,7 @@ app.get('/', Controller.home)
 app.get('/products', Controller.listProducts)
 app.get('/products/add', Controller.getAddProduct)
 app.post('/products/add', Controller.postAddProduct)
+app.get('/products/:id', Controller.listProductsDetail)
 
 app.get('/categories/:id/products', Controller.categoryProduct)
 
