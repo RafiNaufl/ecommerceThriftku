@@ -80,10 +80,14 @@
                     <div class="card custom-card">
                         <a href="/products/<%= product.id %>" style="text-decoration:none; color: black;">
                         <img src="<%= product.photo %>" class="card-img-top" alt="<%= product.title %>">
+                        <a href="/detail/<%= product.id %>">
+                            <img src="<%= product.photo %>" class="card-img-top" alt="<%= product.title %>">
+                        </a>
                         <div class="card-body mb-4">
                             <h5 class="card-title" style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;"><%= product.title %></h5>
                             <p class="card-text">Size: <%= product.size %></p>
                             <h6 class="card-text">Harga: <%= currencyFormatter(product.price) %></h6>
+                            <a href="/buy<%= product.id %>"><button type="submit">buy</button></a>
                         </div>
                         </a>
                     </div>
