@@ -14,7 +14,16 @@ class userController {
 
     static async registerForm(req, res) {
         try {
-            res.render('registForm')
+
+            let err = req.query.err
+            let err2 = ''
+            if(err) {
+                err2 = err.split(',')
+            }
+
+
+            console.log(err);
+            res.render('registForm', {err2})
         } catch (error) {
             console.log(error);
             res.send(error.message)
@@ -40,8 +49,15 @@ class userController {
             res.redirect('/login')
 
         } catch (error) {
-            console.log(error);
-            res.send(error.message)
+            if(error.name === 'SequelizeValidationError') {
+                let err = error.errors.map( el => {
+                    return el.message
+                })
+                res.redirect(`/register?err=${err}`)
+            }else{
+                console.log(error);
+                res.send(error.message)
+            }
         }
     }
 

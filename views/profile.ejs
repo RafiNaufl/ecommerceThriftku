@@ -82,7 +82,7 @@
                             <!-- Form Row-->
                             <div class="mb-3">
                                     <label class="small mb-1" for="name">Nama</label>
-                                    <input class="form-control" id="name" name="name" type="text" value="<%= user.name %>" disabled>
+                                    <input class="form-control" id="name" name="name" type="text" value="<%= profile.name %>" disabled>
                             </div>
                             <!-- Form Group (email address)-->
                             <div class="mb-3">
@@ -94,16 +94,16 @@
                                 <!-- Form Group (phone number)-->
                                 <div class="col-md-6">
                                     <label class="small mb-1" for="phoneNumber">Phone number</label>
-                                    <input class="form-control" id="phoneNumber" name="phoneNumber" type="tel" value="<%= user.phoneNumber %>" disabled>
+                                    <input class="form-control" id="phoneNumber" name="phoneNumber" type="tel" value="<%= profile.phoneNumber %>" disabled>
                                 </div>
                                 <!-- Form Group (birthday)-->
                                 <div class="col-md-6">
                                     <label class="small mb-1" for="dateOfBirth">Birthday</label>
-                                    <input class="form-control" id="dateOfBirth" type="date" name="dateOfBirth" value="<%= user.dateOfBirth %>" disabled>
+                                    <input class="form-control" id="dateOfBirth" type="date" name="dateOfBirth" value="<%= profile.dateOfBirth %>" disabled>
                                 </div>
                             </div>
                             <!-- Save changes button-->
-                            <a href="/edit/profile/" class="btn btn-primary">Edit Profile</a>
+                            <a href="/edit/profile" class="btn btn-primary">Edit Profile</a>
                         </form>
                     </div>
                 </div>
