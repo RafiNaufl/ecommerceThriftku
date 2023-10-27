@@ -35,9 +35,9 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
 
-                <form action="/" method="GET" class="d-flex flex-grow-1">
+                <form action="/products" method="GET" class="d-flex flex-grow-1">
                     <div class="input-group">
-                        <input type="text" class="form-control" id="search" name="search" placeholder="Coba cari dia ...">
+                        <input type="text" class="form-control" id="search" name="search" placeholder="search by title of product">
                         <button class="btn btn-outline-success" type="submit">Cari</button>
                     </div>
                 </form>
@@ -75,8 +75,8 @@
                 Sort by
             </button>
             <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Low Price</a></li>
-                <li><a class="dropdown-item" href="#">High Price</a></li>
+                <li><a class="dropdown-item" href="/low?low=low">Low Price</a></li>
+                <li><a class="dropdown-item" href="/high?high=high">High Price</a></li>
             </ul>
         </div>
     </div>
