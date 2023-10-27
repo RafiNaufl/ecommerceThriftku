@@ -15,23 +15,12 @@ class Controller {
 
     // READ Home
     static async home(req, res) {
-        const { search } = req.query;
+        
     
-        let whereClause = {};
-    
-        if (search) {
-            whereClause = {
-                name: {
-                    [Op.iLike]: `%${search}%` 
-                }
-            };
-        }
-
+        
         try {
 
-            const categories = await Category.findAll({
-                include: Product
-            });
+            const categories = await Category.findAll();
             
             res.render('home', { categories });
         } catch (err) {
@@ -41,7 +30,35 @@ class Controller {
     // READ Product
     static async listProducts(req, res) {
         try {
-            const products = await Product.findAll();
+            const {search} = req.query
+            const {low} = req.query
+            const {high} = req.query
+            let option;
+
+            if(search) {
+                option = {
+                    where: {
+                        title:{
+                            [Op.iLike]: `%${search}%`
+                        }
+                    }
+                }
+            }
+
+            if(low) {
+                option = {
+                    order: [['price', 'Asc']]
+                }
+            }
+
+            if(high) {
+                option = {
+                    order: [['price', 'DESC']]
+                }
+            }
+
+
+            const products = await Product.findAll(option);
             res.render('products', { products, currencyFormatter });
         } catch (err) {
             res.send(err);
@@ -199,11 +216,17 @@ class Controller {
             const user = await User.findOne({
                 where: {
                     id: req.session.userId
-                },
-                include: Profile
+                }
             });
-    
-            res.render('profile', { user });
+
+            const profile = await Profile.findOne({
+                where: {
+                    name: user.username
+                }
+            })
+
+            console.log(user);
+            res.render('profile', { user, profile });
         } catch (error) {
             console.log(error);
             res.send(error.message);
@@ -228,7 +251,8 @@ class Controller {
     
     static async insertEdit(req, res) {
         try {
-            const { name, dateOfBirth, photoProfile, phoneNumber } = req.body;
+            console.log(req.body);
+            const { name, dateOfBirth, photoProfile, phoneNumber, username } = req.body;
     
             await Profile.update(
                 {
@@ -239,7 +263,7 @@ class Controller {
                 },
                 {
                     where: {
-                        UserId: req.session.userId
+                        name: username
                     }
                 }
             );
@@ -264,4 +288,4 @@ class Controller {
     
 }
 
-module.exports = Controller;
+module.exports = Controller

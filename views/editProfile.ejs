@@ -34,16 +34,16 @@
                 <div class="card mb-4">
                     <div class="card-header">Account Details</div>
                     <div class="card-body">
-                        <form action="/edit/profile" method="post">
+                        <form action="/edit/profile/<%= user.id %>" method="post">
                             <!-- Form Group (username)-->
                             <div class="mb-3">
                                 <label class="small mb-1" for="username">Username</label>
-                                <input class="form-control" id="username" name="username" type="text" value="<%= user.username %>" disabled>
+                                <input class="form-control" id="username" name="username" type="text" value="<%= user.username %>" >
                             </div>
                             <!-- Form Row-->
                             <div class="mb-3">
                                     <label class="small mb-1" for="name">Nama</label>
-                                    <input class="form-control" id="name" name="name" type="text" value="<%= user.name %>">
+                                    <input class="form-control" id="name" name="name" type="text" >
                             </div>
                             <!-- Form Group (email address)-->
                             <div class="mb-3">
@@ -55,16 +55,16 @@
                                 <!-- Form Group (phone number)-->
                                 <div class="col-md-6">
                                     <label class="small mb-1" for="phoneNumber">Phone number</label>
-                                    <input class="form-control" id="phoneNumber" name="phoneNumber" type="tel" value="<%= user.phoneNumber %>">
+                                    <input class="form-control" id="phoneNumber" name="phoneNumber" type="tel">
                                 </div>
                                 <!-- Form Group (birthday)-->
                                 <div class="col-md-6">
                                     <label class="small mb-1" for="dateOfBirth">Birthday</label>
-                                    <input class="form-control" id="dateOfBirth" type="date" name="dateOfBirth" value="">
+                                    <input class="form-control" id="dateOfBirth" type="date" name="dateOfBirth">
                                 </div>
                             </div>
                             <!-- Save changes button-->
-                            <a href="/edit/profile/<%= Profile.id %>"><button class="btn btn-primary" type="submit">Save user</button></a>
+                            <button class="btn btn-primary" type="submit">Save user</button>
                             <a href="/delete/profile/<%= user.id %>" class="btn btn-danger"> Delete User</a>
                         </form>
                     </div>
