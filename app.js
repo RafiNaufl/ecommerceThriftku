@@ -36,7 +36,13 @@ app.get('/register', islogged, userController.registerForm)
 
 //! post register
 
-app.post('/register', islogged,userController.insertRegister)
+app.post('/register', islogged, userController.insertRegister, (req, res) => {
+    // Setelah pendaftaran berhasil, kirim email registrasi
+    userController.sendRegistrationEmail(req.body.email); 
+  
+    // Redirect atau berikan tanggapan ke pengguna
+    res.redirect('/login'); // Misalnya, kembali ke halaman login
+  });
 
 
 //! get login 

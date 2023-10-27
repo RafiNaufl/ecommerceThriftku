@@ -1,5 +1,14 @@
 const {User, Profile} = require("../models");
 const bcrypt = require('bcryptjs')
+const nodemailer = require('nodemailer');
+
+const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+        user: 'naufalrafii.9d@gmail.com',
+        pass: 'rafi09272'
+    }
+});
 
 class userController {
 
@@ -33,6 +42,35 @@ class userController {
         } catch (error) {
             console.log(error);
             res.send(error.message)
+        }
+    }
+
+    static async sendRegistrationEmail(newUserEmail) {
+        // Dapatkan data pengguna dengan alamat email yang sesuai dari database
+        const user = await User.findOne({
+            where: {
+                email: newUserEmail
+            }
+        });
+    
+        if (user) {
+            const mailOptions = {
+                from: 'naufalrafii.9d@gmail.com',
+                to: user.email,
+                subject: 'Registration ThriftKu Success!',
+                text: 'Selamat, pendaftaran di Thriftku berhasil. Selamat berbelanja!'
+            };
+    
+            transporter.sendMail(mailOptions, (err, info) => {
+                if (err) {
+                    console.log(err);
+                    console.error('Gagal mengirim email: ' + err);
+                } else {
+                    console.log('Email terkirim: ' + info.response);
+                }
+            });
+        } else {
+            console.error('Pengguna tidak ditemukan.');
         }
     }
 
